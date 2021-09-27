@@ -19,7 +19,7 @@ services:
       - "8213:80"
     volumes:
       # Session data, user files, config files, config database go here.
-      - pgadmin_data:/var/lib/pgadmin_data
+      - pgadmin_data:/var/lib/pgadmin
     environment:
 #      VIRTUAL_HOST: ${PGADMIN_VIRTUAL_HOST}
 #      VIRTUAL_PORT: 80
