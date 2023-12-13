@@ -28,6 +28,8 @@ and I chose 8123 totally arbitrarily.
 
 ## Usage
 
+Give this link a try. http://cc-testmaps:8123/
+
 Once you have it up in a browser window, refer to the docs for pgadmin4.
 
 ### Portal
@@ -59,8 +61,8 @@ The DataStore PostgreSQL instance runs at port 9876.
 
 If your DataStore and your pgadmin are on separate machines you have
 to add a line to pg_hba.conf and then restart the Datastore. The file
-on Windows is in C:/arcgis/arcgisdatastore/pgdata and then line I
-added to give my dockerized pgadmin access was.
+on Windows is in C:/arcgisdatastore/pgdata and then line I
+added to give my dockerized pgadmin access was this:
 
 ```bash
 host  all     sde     10.10.10.210/32 scram-sha-256
@@ -68,8 +70,10 @@ host  all     sde     10.10.10.210/32 scram-sha-256
 
 This gives access only to the machine living at 10.10.10.210 and requires a password.
 
-After you edit pg_hba.conf you must restart the PostgreSQL server, I do that by restarting ArcGIS Datastore.
+After you edit pg_hba.conf you must restart the PostgreSQL server,
+I do that by restarting the ArcGIS Datastore service, not the whole machine.
 
+Caveat Emptor: 
 Note that if you get this line wrong, your PostgreSQL instance will
 not restart, the ArcGIS Datastore will say that it restarted but when
 you check the logs it will tell you there is an error in the file.

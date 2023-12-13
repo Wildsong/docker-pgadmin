@@ -7,14 +7,8 @@ services:
     env_file: .env
     # dpage/pgadmin4 is now the official release
     image: dpage/pgadmin4:latest
-    networks:
-      - proxy
-#      - postgis_net
-    expose:
-      - "80"
-# Only open this up for test, "expose" + proxy is the normal setup.
-#    ports:
-#      - "8213:80"
+    ports:
+      - "8123:80"
     volumes:
       # Session data, user files, config files, config database go here.
       - pgadmin_data:/var/lib/pgadmin
